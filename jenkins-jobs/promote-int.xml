@@ -17,7 +17,7 @@
       <namespace>dev</namespace>
       <authToken>RsQpkpdrgKqZjcEU8h0xRxvqx_1LQXYjGJblDQhhZhQ</authToken>
       <verbose>false</verbose>
-      <testTag>1.0</testTag>
+      <testTag>latest</testTag>
       <prodTag>v2</prodTag>
       <testStream>v2</testStream>
       <prodStream>acceptance</prodStream>

@@ -43,7 +43,7 @@ git co v2
 
 # curl loop to v2
 ```
-for i in {1..10000};do curl v2-ab.rhcloud.example.com; sleep 0.5;done
+for i in {1..10000};do curl v2-ab.apps.lab; sleep 0.5;done
 ```
 
 # rsync changes into running container
@@ -61,7 +61,7 @@ oc rsync --exclude='.git' . v2-1-4bnic:/opt/app-root/src
 
 ## create release build job
 ```
-curl -k -u admin:password -XPOST -d @jenkins-jobs/rel-v2.xml 'https://jenkins-ab.rhcloud.example.com/createItem?name=rel-v2' -H "Content-Type: application/xml"
+curl -k -u admin:password -XPOST -d @jenkins-jobs/rel-v2.xml 'https://jenkins-dev.apps.lab/createItem?name=rel-v2' -H "Content-Type: application/xml"
 ```
 
 ## trigger build for v2:2.0 thru Jenkins Web UI
@@ -77,7 +77,7 @@ oc create -f acceptance.template.json
 
 ### create jenkins job
 ```
-curl -k -u admin:password -XPOST -d @jenkins-jobs/deploy-acc.xml 'https://jenkins-ab.rhcloud.example.com/createItem?name=deploy-acc' -H "Content-Type: application/xml"
+curl -k -u admin:password -XPOST -d @jenkins-jobs/promote-int.xml 'https://jenkins-dev.apps.lab/createItem?name=promote-int' -H "Content-Type: application/xml"
 ```
 
 ### trigger build of deploy-acc job
@@ -88,7 +88,7 @@ curl -k -u admin:password -XPOST -d @jenkins-jobs/deploy-acc.xml 'https://jenkin
 
 # Promote to Production
 ```
-curl -k -u admin:password -XPOST -d @jenkins-jobs/promote-prod.xml 'https://jenkins-ab.rhcloud.example.com/createItem?name=promote-prod' -H "Content-Type: application/xml"
+curl -k -u admin:password -XPOST -d @jenkins-jobs/promote-prod.xml 'https://jenkins-dev.apps.lab/createItem?name=promote-prod' -H "Content-Type: application/xml"
 ```
 
 ## Rolling Update
@@ -96,5 +96,5 @@ run promote-prod job
 
 ## Rollback
 ```
-curl -k -u admin:password -XPOST -d @jenkins-jobs/rollback-prod.xml 'https://jenkins-ab.rhcloud.example.com/createItem?name=rollback-prod' -H "Content-Type: application/xml"
+curl -k -u admin:password -XPOST -d @jenkins-jobs/rollback-prod.xml 'https://jenkins-dev.apps.lab/createItem?name=rollback-prod' -H "Content-Type: application/xml"
 ```

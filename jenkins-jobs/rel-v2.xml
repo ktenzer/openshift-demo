@@ -14,8 +14,8 @@
   <builders>
     <com.openshift.jenkins.plugins.pipeline.OpenShiftBuilder plugin="openshift-pipeline@1.0.4">
       <apiURL>https://openshift.default.svc.cluster.local</apiURL>
-      <namespace>ab</namespace>
-      <authToken>oBbRxIlnM4qkSRYN1IEj3vzMId2Owf7R8RW1gffziYQ</authToken>
+      <namespace>dev</namespace>
+      <authToken>RsQpkpdrgKqZjcEU8h0xRxvqx_1LQXYjGJblDQhhZhQ</authToken>
       <verbose>false</verbose>
       <bldCfg>rel-v2</bldCfg>
       <commitID></commitID>

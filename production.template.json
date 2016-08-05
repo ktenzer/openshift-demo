@@ -7,10 +7,10 @@
       "kind": "Service",
       "apiVersion": "v1",
       "metadata": {
-        "name": "acceptance",
+        "name": "production",
         "creationTimestamp": null,
         "labels": {
-          "app": "acceptance"
+          "app": "production"
         },
         "annotations": {
           "openshift.io/generated-by": "OpenShiftWebConsole"
@@ -26,7 +26,7 @@
           }
         ],
         "selector": {
-          "deploymentconfig": "acceptance"
+          "deploymentconfig": "production"
         },
         "type": "ClusterIP",
         "sessionAffinity": "None"
@@ -39,17 +39,17 @@
       "kind": "Route",
       "apiVersion": "v1",
       "metadata": {
-        "name": "acceptance",
+        "name": "production",
         "creationTimestamp": null,
         "labels": {
-          "app": "acceptance"
+          "app": "production"
         }
       },
       "spec": {
-        "host": "int-ab.apps.lab",
+        "host": "prod-ab.apps.lab",
         "to": {
           "kind": "Service",
-          "name": "acceptance"
+          "name": "production"
         },
         "port": {
           "targetPort": "8080-tcp"
@@ -58,7 +58,7 @@
       "status": {
         "ingress": [
           {
-            "host": "int-ab.apps.lab",
+            "host": "prod-ab.apps.lab",
             "routerName": "router",
             "conditions": [
               {
@@ -75,10 +75,10 @@
       "kind": "DeploymentConfig",
       "apiVersion": "v1",
       "metadata": {
-        "name": "acceptance",
+        "name": "production",
         "creationTimestamp": null,
         "labels": {
-          "app": "acceptance"
+          "app": "production"
         },
         "annotations": {
           "openshift.io/generated-by": "OpenShiftWebConsole"
@@ -102,11 +102,11 @@
             "imageChangeParams": {
               "automatic": true,
               "containerNames": [
-                "acceptance"
+                "production"
               ],
               "from": {
                 "kind": "ImageStreamTag",
-                "name": "acceptance:latest"
+                "name": "production:latest"
               }
             }
           },
@@ -114,25 +114,25 @@
             "type": "ConfigChange"
           }
         ],
-        "replicas": 1,
+        "replicas": 4,
         "test": false,
         "selector": {
-          "deploymentconfig": "acceptance"
+          "deploymentconfig": "production"
         },
         "template": {
           "metadata": {
             "creationTimestamp": null,
             "labels": {
               "ab": "true",
-              "app": "acceptance",
-              "deploymentconfig": "acceptance"
+              "app": "production",
+              "deploymentconfig": "production"
             }
           },
           "spec": {
             "containers": [
               {
-                "name": "acceptance",
-                "image": "172.30.139.50:5000/ab/acceptance:latest",
+                "name": "production",
+                "image": "172.30.139.50:5000/ab/production:latest",
                 "ports": [
                   {
                     "containerPort": 8080,

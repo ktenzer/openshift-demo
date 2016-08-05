@@ -14,15 +14,15 @@
   <builders>
     <com.openshift.jenkins.plugins.pipeline.OpenShiftImageTagger plugin="openshift-pipeline@1.0.13">
       <apiURL>https://openshift.default.svc.cluster.local</apiURL>
-      <namespace>ab</namespace>
-      <authToken>oBbRxIlnM4qkSRYN1IEj3vzMId2Owf7R8RW1gffziYQ</authToken>
+      <namespace>dev</namespace>
+      <authToken>RsQpkpdrgKqZjcEU8h0xRxvqx_1LQXYjGJblDQhhZhQ</authToken>
       <verbose>false</verbose>
-      <testTag>v1</testTag>
+      <testTag>latest</testTag>
       <prodTag>latest</prodTag>
-      <testStream>production</testStream>
+      <testStream>v1</testStream>
       <prodStream>production</prodStream>
-      <destinationNamespace>ab</destinationNamespace>
-      <destinationAuthToken>oBbRxIlnM4qkSRYN1IEj3vzMId2Owf7R8RW1gffziYQ</destinationAuthToken>
+      <destinationNamespace>prod</destinationNamespace>
+      <destinationAuthToken>RsQpkpdrgKqZjcEU8h0xRxvqx_1LQXYjGJblDQhhZhQ</destinationAuthToken>
       <alias>true</alias>
     </com.openshift.jenkins.plugins.pipeline.OpenShiftImageTagger>
   </builders>

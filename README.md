@@ -40,7 +40,7 @@ oc create -f template.json -n dev
 oc create -f acceptance.template.json -n int
 ```
 ```
-oc create -f production.template.json -n int
+oc create -f production.template.json -n prod
 ```
 ### add template to project
 ### create deployments

@@ -17,7 +17,7 @@
       <namespace>dev</namespace>
       <authToken>RsQpkpdrgKqZjcEU8h0xRxvqx_1LQXYjGJblDQhhZhQ</authToken>
       <verbose>false</verbose>
-      <bldCfg>rel-v2</bldCfg>
+      <bldCfg>v2</bldCfg>
       <commitID></commitID>
       <buildName></buildName>
       <showBuildLogs>true</showBuildLogs>

@@ -3,24 +3,51 @@
 * change wildcard domain
 * change token in Jenkins jobs
 
-# create project ab
+# create project dev
 ```
-oc new-project ab
+oc new-project dev
+```
+
+# create project int
+```
+oc new-project int
+```
+
+# create project prod
+```
+oc new-project prod
+```
+
+# give dev and prod image puller permissions
+```
+oc policy add-role-to-group system:image-puller system:serviceaccounts:int -n dev
+```
+```
+oc policy add-role-to-group system:image-puller system:serviceaccounts:prod -n int
+```
+```
+oc policy add-role-to-group system:image-puller system:serviceaccounts:prod -n dev
 ```
 
 # create Template
 
 ## using WebUI
-### create template
+### create templates
 ```
-oc create -f template.json
+oc create -f template.json -n dev
+```
+```
+oc create -f acceptance.template.json -n int
+```
+```
+oc create -f production.template.json -n int
 ```
 ### add template to project
 ### create deployments
 
 ## using CLI in one go
 ```
-oc new-app -f template.json
+oc new-app -f template.json -n dev
 ```
 
 # tag for production deployment

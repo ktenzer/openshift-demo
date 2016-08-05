@@ -129,7 +129,7 @@
         "source": {
           "type": "Git",
           "git": {
-            "uri": "https://github.com/j1cken/nodejs-ex.git",
+            "uri": "https://github.com/ktenzer/nodejs-ex.git",
             "ref": "master"
           },
           "secrets": null
@@ -184,7 +184,7 @@
         "source": {
           "type": "Git",
           "git": {
-            "uri": "https://github.com/j1cken/nodejs-ex.git",
+            "uri": "https://github.com/ktenzer/nodejs-ex.git",
             "ref": "v2"
           },
           "secrets": null
@@ -235,7 +235,7 @@
         "source": {
           "type": "Git",
           "git": {
-            "uri": "https://github.com/j1cken/nodejs-ex.git",
+            "uri": "https://github.com/ktenzer/nodejs-ex.git",
             "ref": "v2"
           },
           "secrets": null
